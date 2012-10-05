@@ -5,6 +5,7 @@ Sometimes I like to collect large galleries of images, but I don't
 want to manually save them all, or even do quality control.
 
 This can be invoked like so:
+
     from scrape_images import Scrape_images
 
     Scrape_images('gunporn','/home/brandon/Downloads')
