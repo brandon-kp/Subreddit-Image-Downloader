@@ -6,9 +6,9 @@ want to manually save them all, or even do quality control.
 
 This can be invoked like so:
 
-    from scrape_images import Scrape_images
+    from RedditImageScraper import RedditImageScraper
 
-    Scrape_images('gunporn','/home/brandon/Downloads')
+    RedditImageScraper('gunporn','/home/brandon/Downloads')
 
 The first parameter is the subreddit you want to download from, the
 second is the path. The script automagically creates a folder like 
