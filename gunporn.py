@@ -1,3 +1,3 @@
-from scrape_images import Scrape_images
+from RedditImageScraper import RedditImageScraper
 
-Scrape_images('gunporn','/home/brandon/Downloads')
+RedditImageScraper('gunporn','/home/brandon/Downloads')
