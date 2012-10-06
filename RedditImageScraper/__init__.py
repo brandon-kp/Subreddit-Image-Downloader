@@ -1,6 +1,5 @@
 import json
 import requests
-import re
 import urllib
 import datetime
 import os
@@ -27,14 +26,12 @@ class RedditImageScraper(object):
         return data["data"]["children"]
 
     def get_image_links(self):
-        json    = self.parse_json()
-        pattern = re.compile('.*?(jpg)', re.IGNORECASE|re.DOTALL)
+        json = self.parse_json()
 
         for subs in json:
-            subs    = subs["data"]
-            matches = pattern.search(subs["url"])
+            subs = subs["data"]
 
-            if matches:
+            if subs['url'][-4:].lower() in ('.jpg'):
                 self.image_links.append({
                     'file_name': subs["id"],
                     'file_url' : subs["url"]
