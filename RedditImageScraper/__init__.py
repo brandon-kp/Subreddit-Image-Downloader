@@ -7,10 +7,10 @@ now = datetime.datetime.now()
 
 class RedditImageScraper(object):
     def __init__(self, subreddit, download_path):
-        self.subreddit     = subreddit
-        self.today         = "%s-%d-%d" %(subreddit, now.month, now.year)
+        self.subreddit = subreddit
+        self.today = "%s-%d-%d" %(subreddit, now.month, now.year)
         self.download_path = download_path+"/reddit_"+self.today
-        self.image_links   = []
+        self.image_links = []
 
         self.download_all()
 
@@ -21,7 +21,7 @@ class RedditImageScraper(object):
         
     def parse_json(self):
         subreddit_json = self.get_json()
-        data           = json.loads(subreddit_json)
+        data = json.loads(subreddit_json)
 
         return data["data"]["children"]
 
@@ -34,7 +34,7 @@ class RedditImageScraper(object):
             if subs['url'][-4:].lower() in ('.jpg'):
                 self.image_links.append({
                     'file_name': subs["id"],
-                    'file_url' : subs["url"]
+                    'file_url': subs["url"]
                 })
 
     def download_image(self, url, path):
